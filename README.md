@@ -30,8 +30,8 @@ You can also run this step directly with [Bitrise CLI](https://github.com/bitris
 | `ios_xcconfig_path` | The path relative to project root directory where the custom `.xcconfig` file is located |  |  |
 | `version_name` | The version name for the app |  |  |
 | `version_code` | The version code for the app |  |  |
-| `disable_version_name_from_package_json` | By default will get the 'version' field from package.json and set the version name |  | `no` |
-| `disable_version_code_auto_generation` | By default will generate a timestamp based number and set the version code |  | `no` |
+| `disable_version_name_from_package_json` | By default will get the 'version' field from package.json and set the version name |  | `$NITRO_DISABLE_VERSION_NAME_FROM_PACKAGE_JSON` |
+| `disable_version_code_auto_generation` | By default will generate a timestamp based number and set the version code |  | `NITRO_DISABLE_VERSION_CODE_AUTO_GENERATION` |
 | `ios_certificate_url` | The url to download and install the certificate |  |  |
 | `ios_certificate_passphrase` | Certificate passphrase | sensitive |  |
 | `ios_codesigning_identity` | Codesigning identity |  |  |
@@ -40,17 +40,17 @@ You can also run this step directly with [Bitrise CLI](https://github.com/bitris
 | `ios_team_id` | Specify the Team ID you want to use for the Apple Developer Portal |  |  |
 | `ios_export_method` | The export method used to generate the IPA |  | `ad-hoc` |
 | `cache_provider` | Choose the provider where cache artifacts will be persisted: - `fs`: File system - `s3`: Amazon - Simple Storage Service |  | `s3` |
-| `disable_cache` | When setting this option to `yes` build cache optimizations won't be performed |  | `no` |
+| `disable_cache` | When setting this option to `yes` build cache optimizations won't be performed |  | `$NITRO_DISABLE_CACHE` |
 | `cache_env_var_lookup_keys` | A list of `\|` separated values with env variable keys to lookup to determine whether the build should be cached or not |  |  |
 | `cache_file_lookup_paths` | A list of `\|` separated value paths (relative to the root of the repo or absolute) to lookup in order to determine whether the build should be cached or not |  |  |
-| `disable_metro_cache` | Setting this field to yes will disable the React Native Metro cache feature |  | `no` |
+| `disable_metro_cache` | Setting this field to yes will disable the React Native Metro cache feature |  | `$NITRO_DISABLE_METRO_CACHE` |
 | `pre_install_command` | Run command prior to install project dependencies (e.g. `rm -rf ./some-folder`) |  |  |
 | `pre_build_command` | Run command prior to start building the app (e.g. `yarn tsc && yarn test`) |  |  |
 | `post_build_command` | Run command once build successfully finished (e.g. `yarn publish`) |  |  |
 | `output_directory` | The path to the directory where to place all of Nitro's output files |  | `$BITRISE_DEPLOY_DIR` |
 | `entry_file` | The entry file for bundle generation |  | `$ENTRY_FILE` |
-| `debug` | Enable verbose logs |  | `no` |
-| `fail_safe` | Runing the app in this mode allows you to prevent the build to fail but you can check the status in further steps |  |  |
+| `debug` | Enable verbose logs |  | `$NITRO_DEBUG_MODE` |
+| `fail_safe` | Runing the app in this mode allows you to prevent the build to fail but you can check the status in further steps |  | `$NITRO_FAIL_SAFE` |
 </details>
 
 <details>
