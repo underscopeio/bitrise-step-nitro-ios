@@ -62,7 +62,7 @@ inputs:
       title: "Version code"
       summary: "The version code for the app"
       is_expand: true
-  - disable_version_name_from_package_json: "no"
+  - disable_version_name_from_package_json: "$NITRO_DISABLE_VERSION_NAME_FROM_PACKAGE_JSON"
     opts:
       category: "App Versioning"
       title: "Disable automatic version name configuration"
@@ -71,7 +71,7 @@ inputs:
       value_options:
         - "yes"
         - "no"
-  - disable_version_code_auto_generation: "no"
+  - disable_version_code_auto_generation: "NITRO_DISABLE_VERSION_CODE_AUTO_GENERATION"
     opts:
       category: "App Versioning"
       title: "Disable automatic version code generation"
@@ -143,7 +143,7 @@ inputs:
       value_options:
         - "fs"
         - "s3"
-  - disable_cache: "no"
+  - disable_cache: "$NITRO_DISABLE_CACHE"
     opts:
       category: "Caching"
       title: "Disable builds caching"
@@ -166,7 +166,7 @@ inputs:
       summary: "A list of `|` separated value paths (relative to the root of the repo or absolute) to lookup in order to determine whether the build should be cached or not"
       description: "A list of `|` separated value paths (relative to the root of the repo or absolute) to lookup in order to determine whether the build should be cached or not"
       is_expand: true
-  - disable_metro_cache: "no"
+  - disable_metro_cache: "$NITRO_DISABLE_METRO_CACHE"
     opts:
       category: "Advanced"
       title: "Disable Metro bundler cache"
@@ -210,7 +210,7 @@ inputs:
       title: "The entry file for bundle generation"
       summary: "The entry file for bundle generation"
       is_expand: true
-  - debug: "no"
+  - debug: "$NITRO_DEBUG_MODE"
     opts:
       category: "Advanced"
       title: Debug
@@ -219,7 +219,7 @@ inputs:
       value_options:
         - "yes"
         - "no"
-  - fail_safe:
+  - fail_safe: "$NITRO_FAIL_SAFE"
     opts:
       category: "Advanced"
       title: "Fail-safe mode"
